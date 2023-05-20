@@ -182,7 +182,7 @@ async function nameli(){
     try{
          var keyword  =document.getElementById("namelist").value;
         divrow.innerHTML ="";
-        
+        divnamelist.innerHTML="";
         console.log(keyword);
     var val =null;
     if(keyword!=null& keyword !=""){
