@@ -89,7 +89,7 @@ input2.setAttribute("type","text");
 input2.setAttribute("id","cityname");
 input2.style.width="275px";
 input2.style.margin="10px";
-input2.setAttribute("placeholder","City Name (");
+input2.setAttribute("placeholder","City Name (optional)");
 
 var input3=document.createElement("input");
 input3.setAttribute("type","text");
