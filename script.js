@@ -149,26 +149,6 @@ async function foo(){
         let res1 = await val.json();
         createLabel(res1);
 }
-function createLabel(data) {
-     for (let i = 0; i < data.length; i++) {
-       divrow.innerHTML +=`<div class="col-md-4" >
-       <div class="card bg-danger-subtle text-emphasis-danger border-primary mb-3 style="max-width:18rem;textAlign:center">
-       <div class="card-header" style="color:red;font-family: Verdana;"><b>${data[i].name}</b></div>
-       <div class="card-body" style="text-align:center">
-       <p class="card-title">Brewery Type :${data[i].brewery_type} </p>
-         <p class="card-title">Address :${data[i].address_1} </p>
-         <p class="card-title">City :${data[i].city} </p>
-         <p class="card-title">State :${data[i].state} </p>
-         <p class="card-title">Postal Code :${data[i].postal_code} </p>
-         <p class="card-title">Country :${data[i].country} </p>
-         <p class="card-text">Phone No: ${data[i].phone}</p>
-         <a href="${data[i].website_url}" target="_blank"  style="color:black"><b>Go To Website</b></a>
-       </div>
-       </div>
-       </div>`;
-        document.body.append(divc);
-    }
-}
     }catch{
         divrow.innerHTML=`<span>404 Page Not found try again</span><br><br>`;
       
@@ -211,7 +191,11 @@ async function Stratinglist(){
        var val =await fetch(`https://api.openbrewerydb.org/v1/breweries?per_page=6`);
         let res1 = await val.json();
         createLabel(res1);
-
+    }catch{
+        divrow.innerHTML=`<span>404 Page Not found try again</span><br><br>`;
+      
+    }
+}
 function createLabel(data) {
     divrow.innerHTML +=`<h1 style="text-align:center;margin:10px;color:white">Some of Our Listings </h1>`;
      for (let i = 0; i < data.length; i++) {
@@ -231,10 +215,5 @@ function createLabel(data) {
        </div>
        </div>`;
         document.body.append(divc);
-    }
-}
-    }catch{
-        divrow.innerHTML=`<span>404 Page Not found try again</span><br><br>`;
-      
     }
 }
