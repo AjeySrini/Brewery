@@ -166,11 +166,11 @@ async function nameli(){
     if(keyword!=null& keyword !=""){
         val =await fetch(`https://api.openbrewerydb.org/v1/breweries/autocomplete?query=${keyword}`);
         let res1 = await val.json();
-        createLabel(res1);
+        createLabel1(res1);
        }else {
         divnamelist.innerHTML=`<span style="color:white;">Please Enter valid key word eg:"copper","dog",etc...</span><br><br>`;
        }
-function createLabel(data) {
+function createLabel1(data) {
  
     for (let i = 0; i < data.length; i++) {
         divnamelist.innerHTML += ` <li style="color:white">${data[i].name}</li> `;
