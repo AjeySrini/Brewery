@@ -179,7 +179,7 @@ function createLabel1(data) {
     }
 }
     }catch{
-        divrow.innerHTML=`<span style="color:white;">Please Enter valid key word</span><br><br>`;
+        divrow.innerHTML=`<span style="color:white;">404 Page Not found try again</span><br><br>`;
       
     }
 }
@@ -196,6 +196,8 @@ async function Stratinglist(){
       
     }
 }
+
+//
 function createLabel(data) {
     divrow.innerHTML +=`<h1 style="text-align:center;margin:10px;color:white">Some of Our Listings </h1>`;
      for (let i = 0; i < data.length; i++) {
